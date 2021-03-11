@@ -1,0 +1,10 @@
+%section
+  .row
+    .column.lg-4
+      .text-center.lg-text-left.mb-2= image_tag @host.picture_url
+    .column.lg-8
+      %h2.mb-2= @host.first_name
+      %h3.mb-hr About
+      %p.mb-1= @host.about
+      .text-center.lg-text-left= link_to 'View Listings', listings_path(host_id: @host.id), class: 'btn'
+

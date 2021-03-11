@@ -1,0 +1,14 @@
+%section
+  .row.mb-2
+    .column
+      %h1 NEW HOST
+
+
+  .row
+    .column.lg-6.lg-offset-3
+      = form_with model: @host do |f|
+        .form-group
+          = label :host_number, 'Airbnb ID'
+          = f.text_field :host_number
+        .form-grop.text-center
+          = f.submit 'Add Host', class: 'btn'

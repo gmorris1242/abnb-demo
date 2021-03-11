@@ -1,0 +1,183 @@
+//FONTS add fonts here
+// e.g.
+// @font-face {
+//   font-family: 'Butler Black';
+//   src: font-url('butler_black.otf')
+// }
+//
+// @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;900&display=swap');
+//
+// $butler_black: 'Butler Black', serif;
+// $raleway: 'Raleway', sans-serif;
+
+// BREAKPOINTS
+$medium: 600px;
+$large: 800px;
+$xlarge: 1200px;
+$xxlarge: 1900px;
+
+// COLORS
+// class e.g.
+// .black { color: $black !important; }
+// .black-bg { background-color: $black !important; }
+$black: #000;
+$gray: #D3D3D3;
+$light-gray: #ECECEC;
+$white: #FFF;
+$red: #E23838;
+$orange: #F78200;
+$yellow: #FFB900;
+$green: #5EBD3E;
+$blue: #009CDF;
+$indigo: #31457D;
+$violet: #973999;
+$teal: #2D9FA2;
+$primary-color: $red;
+$secondary-color: $yellow;
+$tertiary-color: $blue;
+$heading-color: #333;
+$copy-color: #333;
+$success-color: #2FAC58;
+$info-color: #25327C;
+$danger-color: #E83D48;
+$warning-color: #EAC435;
+
+// TYPOGRAPHY
+$body-font: serif;
+$copy-font: serif;
+$heading-font: sans-serif;
+
+$body-font-size: 16px;
+$copy-font-size: 16px;
+$heading-1-font-size: 2rem;
+$heading-2-font-size: 1.5rem;
+$heading-3-font-size: 1.17rem;
+$heading-4-font-size: 1.12rem;
+$heading-5-font-size: .83rem;
+$heading-6-font-size: .75rem;
+$heading-margin: 0 0 .5rem 0;
+$copy-margin: 0 0 .5rem 0;
+
+// BUTTONS
+$btn-min-width: 145px;
+$btn-border-style: solid;
+$btn-border-radius: 5px;
+$btn-border-width: 1px;
+$btn-padding: 11px 5px;
+$btn-font-size: 16px;
+$btn-font-weight: 700;
+$btn-font: $copy-font;
+$btn-color: $primary-color;
+$btn-border-color: $primary-color;
+$btn-text-color: $white;
+$secondary-btn-text-color: $white;
+$secondary-btn-color: $secondary-color;
+$secondary-btn-border-color: $secondary-color;
+$tertiary-btn-text-color: $white;
+$tertiary-btn-color: $tertiary-color;
+$tertiary-btn-border-color: $tertiary-color;
+$btn-mini-min-width: 70px;
+$btn-mini-padding: 8px;
+
+// FORMS
+$input-border: none;
+$input-border-radius: 0;
+$input-bg: $light-gray;
+$input-padding: 8px;
+$input-margin-bottom: 16px;
+$input-height: 38px;
+$text-area-min-height: 200px;
+$label-margin-bottom: 8px;
+$form-font: $copy-font;
+$label-font: $form-font;
+$input-font-size: $copy-font-size;
+$label-font-size: $copy-font-size;
+$file-font-size: 14px;
+$checkbox-width: 16px;
+$checkbox-margin-bottom: 8px;
+$radio-width: 13px;
+$radio-margin-bottom: 8px;
+
+// MODALS
+$modal-bg-color: $white;
+$modal-max-width: 1200px;
+$modal-content-padding: 20px;
+$modal-border-radius: 5px;
+$modal-border: 5px solid $white;
+$modal-close-size: 30px;
+$modal-close-color: $copy-color;
+$modal-close-transform: rotate(45deg);
+
+// TABLES
+$table-border: none;
+$border-collapse: collapse;
+$tr-border: 1px solid $light-gray;
+$td-border: none;
+$tr-bg: $light-gray;
+$td-padding: 5px;
+$table-font: $copy-font;
+$table-font-size: $copy-font-size;
+
+//UNIVERSAL
+$main-overflow: hidden;
+$section-padding-desktop: 2rem 0;
+$section-padding-mobile: 1rem 0;
+
+@import 'timequake/index';
+
+// HAMBURGERS
+$hamburger-padding-x           : 15px;
+$hamburger-padding-y           : 15px;
+$hamburger-layer-width         : 40px;
+$hamburger-layer-height        : 4px;
+$hamburger-layer-spacing       : 6px;
+$hamburger-layer-color         : #789798;
+$hamburger-layer-border-radius : 4px;
+$hamburger-hover-opacity       : 0.7;
+$hamburger-active-layer-color  : $hamburger-layer-color;
+$hamburger-active-hover-opacity: $hamburger-hover-opacity;
+
+// To use CSS filters as the hover effect instead of opacity,
+// set $hamburger-hover-use-filter as true and
+// change the value of $hamburger-hover-filter accordingly.
+$hamburger-hover-use-filter   : false;
+$hamburger-hover-filter       : opacity(0%);
+$hamburger-active-hover-filter: $hamburger-hover-filter;
+
+// Remove or comment out the hamburger types you don’t want
+// or need, so they get excluded from the compiled CSS.
+$hamburger-types: (
+  3dx,
+  3dx-r,
+  3dy,
+  3dy-r,
+  3dxy,
+  3dxy-r,
+  arrow,
+  arrow-r,
+  arrowalt,
+  arrowalt-r,
+  arrowturn,
+  arrowturn-r,
+  boring,
+  collapse,
+  collapse-r,
+  elastic,
+  elastic-r,
+  emphatic,
+  emphatic-r,
+  minus,
+  slider,
+  slider-r,
+  spring,
+  spring-r,
+  stand,
+  stand-r,
+  spin,
+  spin-r,
+  squeeze,
+  vortex,
+  vortex-r
+);
+
+@import "hamburgers/hamburgers"

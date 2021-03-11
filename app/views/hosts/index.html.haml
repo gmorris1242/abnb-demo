@@ -1,0 +1,23 @@
+%section
+  .row.mb-2
+    .column
+      %h1 HOSTS
+  .row
+    - @hosts.each do |host|
+      .column.lg-6
+        .host.mb-1
+          .flex.ai-center.jc-center.lg-jc-space-between.flex-wrap
+            .img-wrapper= image_tag host.thumbnail_url
+            .details.mx-1
+              %h2= host.first_name
+              %p= host.location
+              %p
+                %strong Listings:
+                = host.listings.count
+            .btn-wrapper
+              = link_to 'View Host', host_path(host), class: 'btn btn-mini'
+              = link_to 'View Listings', listings_path(host_id: host.id), class: 'btn btn-mini'
+
+
+
+

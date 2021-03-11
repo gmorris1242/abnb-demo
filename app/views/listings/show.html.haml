@@ -1,0 +1,24 @@
+%section
+  .row
+    .column.lg-4
+      .text-center.lg-text-left.mb-2= image_tag @listing.picture_url
+    .column.lg-8
+      %h2= @listing.name
+      %h3= @listing.localized_city
+      %h3= "$#{@listing.nightly_price_as_guest}"
+
+  .row
+    .column
+      %table
+        %tr
+          %th Date
+          %th Available?
+        - @listing.calendar.each do |date|
+          %tr
+            %td= date['date']
+            %td= date['available']
+
+
+
+
+
