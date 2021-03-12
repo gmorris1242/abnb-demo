@@ -15,3 +15,25 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+import TurbolinksAdapter from 'vue-turbolinks'
+import Vue from 'vue/dist/vue.esm'
+import App from '../app.vue'
+import Hosts from 'packs/components/hosts.vue'
+import Host from 'packs/components/host.vue'
+import Listings from 'packs/components/listings.vue'
+import Listing from 'packs/components/listing.vue'
+
+Vue.use(TurbolinksAdapter)
+
+Vue.component('app', App)
+Vue.component('hosts', Hosts)
+Vue.component('host', Host)
+Vue.component('listings', Listings)
+Vue.component('listing', Listing)
+
+document.addEventListener('turbolinks:load', () => {
+  const app = new Vue({
+    el: '[data-behavior="vue"]'
+  })
+})

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'pages#home'
+  root 'hosts#new'
+
+  get 'apis', to: 'pages#home', as: :home
 
   resources :hosts
   resources :listings

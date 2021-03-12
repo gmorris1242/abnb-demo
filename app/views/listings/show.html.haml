@@ -1,11 +1,41 @@
 %section
+  -# .row
+  -#   .column.lg-4
+  -#     .text-center.lg-text-left.mb-2= image_tag @listing.picture_url
+  -#   .column.lg-8
+  -#     %h2= @listing.name
+  -#     %h3= @listing.localized_city
+  -#     %h3= "$#{@listing.nightly_price_as_guest}"
+  -#
+
+
+
+  %listing(listing="#{@listing.to_json}")
+
   .row
-    .column.lg-4
-      .text-center.lg-text-left.mb-2= image_tag @listing.picture_url
-    .column.lg-8
-      %h2= @listing.name
-      %h3= @listing.localized_city
-      %h3= "$#{@listing.nightly_price_as_guest}"
+    .column
+      = month_calendar(attribute: :starts_at) do |date|
+        = date
+
+
+
+  -# .row.mb-2
+  -#   .column.lg-4
+  -#     %h3.mb-1= DateTime.now.strftime('%B')
+  -#     .flex.flex-wrap
+  -#       - 35.times do |idx|
+  -#         .day{ style: 'height:50px;width:50px;border:1px solid #333;', data: {square: idx + 1, month: DateTime.now.month} }
+  -#   .column.lg-4
+  -#     %h3.mb-1= 1.month.from_now.strftime('%B')
+  -#     .flex.flex-wrap
+  -#       - 35.times do |idx|
+  -#         .day{ style: 'height:50px;width:50px;border:1px solid #333;', data: {square: idx + 1, month: 1.month.from_now.month} }
+  -#   .column.lg-4
+  -#     %h3.mb-1= 2.month.from_now.strftime('%B')
+  -#     .flex.flex-wrap
+  -#       - 35.times do |idx|
+  -#         .day{ style: 'height:50px;width:50px;border:1px solid #333;', data: {square: idx + 1, month: 2.month.from_now.month} }
+
 
   .row
     .column
@@ -15,10 +45,8 @@
           %th Available?
         - @listing.calendar.each do |date|
           %tr
-            %td= date['date']
+            %td
+              = date['date']
+              = Date.parse(date['date']).cwday
+              = Date.parse(date['date']).month
             %td= date['available']
-
-
-
-
-

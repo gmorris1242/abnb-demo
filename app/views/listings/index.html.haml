@@ -3,25 +3,5 @@
     .column
       %h1 Listings
 
-  .row
-    .column
-      .host
-        %table
-          %tr
-            %th
-            %th Name
-            %th City
-            %th Price
-            %th ID
-          - @listings.each_with_index do |listing, idx|
-            %tr
-              %td= idx + 1
-              %td= link_to listing.name, listing_path(listing)
-              %td= listing.localized_city
-              %td= "$#{listing.nightly_price_as_guest}"
-              %td= listing.airbnb_listing_id_str
-
-
-
-
+  %listings(listings="#{@listings.to_json}")
 
