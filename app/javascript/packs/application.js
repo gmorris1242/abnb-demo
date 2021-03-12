@@ -23,6 +23,7 @@ import Hosts from 'packs/components/hosts.vue'
 import Host from 'packs/components/host.vue'
 import Listings from 'packs/components/listings.vue'
 import Listing from 'packs/components/listing.vue'
+import CalendarMonth from "packs/components/CalendarMonth.vue";
 
 Vue.use(TurbolinksAdapter)
 
@@ -31,6 +32,7 @@ Vue.component('hosts', Hosts)
 Vue.component('host', Host)
 Vue.component('listings', Listings)
 Vue.component('listing', Listing)
+Vue.component('calendar-month', CalendarMonth)
 
 document.addEventListener('turbolinks:load', () => {
   const app = new Vue({
