@@ -25,13 +25,15 @@ class Host < ApplicationRecord
     count = 0
     listings = listing_call(count)
 
-    while listings['user_promo_listings'].count >= 50 do
-      create_listings(listings)
-      listings = listing_call(count + 50)
-      count = count + 50
-    end
+    if (listings['user_promo_listings'])
+      while listings['user_promo_listings'].count >= 50 do
+        create_listings(listings)
+        listings = listing_call(count + 50)
+        count = count + 50
+      end
 
-    create_listings(listings)
+      create_listings(listings)
+    end
   end
 
   def listing_call(offset)
@@ -49,10 +51,10 @@ class Host < ApplicationRecord
         localized_city: listing['localized_city'],
         airbnb_listing_id_str: listing['id_str'],
       )
+
       if new_listing.save
         puts 'SAVED'
       else
-        byebug
         puts "ERROR: #{new_listing['airbnb_listing_id_str']}"
       end
     end

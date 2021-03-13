@@ -6,6 +6,7 @@ namespace :db do
 
     hosts.each do |host|
       enter_listings(host.host_number, host.id)
+      print 'Updated, '
     end
   end
 end
@@ -14,13 +15,15 @@ def enter_listings(host_number, host_id)
   count = 0
   listings = listing_call(count, host_number)
 
-  while listings['user_promo_listings'].count >= 50 do
-    create_listings(listings, host_id)
-    listings = listing_call(count + 50, host_number)
-    count = count + 50
-  end
+  if listings['user_promo_listings']
+    while listings['user_promo_listings'].count >= 50 do
+      create_listings(listings, host_id)
+      listings = listing_call(count + 50, host_number)
+      count = count + 50
+    end
 
-  create_listings(listings, host_id)
+    create_listings(listings, host_id)
+  end
 end
 
 def listing_call(offset, host_number)

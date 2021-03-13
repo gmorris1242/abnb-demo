@@ -23,11 +23,11 @@ class HostsController < ApplicationController
 
     if @host.save
       flash[:notice] = 'Host has been created'
-      redirect_to hosts_path
     else
-      flash.now[:error] = 'There was an error'
-      render :new
+      flash[:error] = 'There was an error'
     end
+
+    redirect_to hosts_path
   end
 
   def show

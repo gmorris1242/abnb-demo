@@ -1,6 +1,7 @@
 <template>
   <div class="calendar-month">
     <div class="calendar-month-header">
+      <!-- {{JSON.parse(bookings)}} -->
       <CalendarDateIndicator
         :selected-date="selectedDate"
         class="calendar-month-header-selected-month"
@@ -40,6 +41,28 @@ dayjs.extend(weekOfYear);
 
 export default {
   name: "CalendarMonth",
+  props: ['bookings'],
+
+  mounted() {
+    let bookings = JSON.parse(this.$props.bookings)
+
+    bookings.forEach((booking) => {
+      if (booking['available'] !== true) {
+        let calendarDate = document.querySelector(`[data-date='${booking['date']}']`)
+        if (calendarDate) { calendarDate.classList.add('not-available') }
+      }
+    })
+  },
+  updated() {
+    let bookings = JSON.parse(this.$props.bookings)
+
+    bookings.forEach((booking) => {
+      if (booking['available'] !== true) {
+        let calendarDate = document.querySelector(`[data-date='${booking['date']}']`)
+        if (calendarDate) { calendarDate.classList.add('not-available') }
+      }
+    })
+  },
 
   components: {
     CalendarMonthDayItem,
@@ -55,6 +78,7 @@ export default {
   },
 
   computed: {
+
     days() {
       return [
         ...this.previousMonthDays,
