@@ -17,7 +17,7 @@ class Host < ApplicationRecord
   has_many :listings, dependent: :destroy
   validates :host_number, presence: true, uniqueness: true
 
-  after_create :enter_listings
+  after_commit :enter_listings
 
   private
 
