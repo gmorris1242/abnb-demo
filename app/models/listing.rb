@@ -21,8 +21,6 @@ class Listing < ApplicationRecord
   belongs_to :host
   validates :airbnb_listing_id_str, presence: true, uniqueness: true
 
-  # after_create :set_calendar
-
   def set_calendar
     dates = []
 

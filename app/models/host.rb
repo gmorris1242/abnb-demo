@@ -59,6 +59,4 @@ class Host < ApplicationRecord
       end
     end
   end
-
-
 end
