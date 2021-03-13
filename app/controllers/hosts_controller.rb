@@ -15,7 +15,7 @@ class HostsController < ApplicationController
       about: response['users'].first['about'],
       first_name: response['users'].first['first_name'],
       host_number: host_params[:host_number],
-      last_name: response['users'].first['first_name'],
+      last_name: response['users'].first['last_name'],
       location: response['users'].first['location'],
       picture_url: response['users'].first['picture_url'],
       thumbnail_url: response['users'].first['thumbnail_url']

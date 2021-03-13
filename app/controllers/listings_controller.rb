@@ -1,7 +1,8 @@
 class ListingsController < ApplicationController
   def index
     if params[:host_id]
-      @listings = Host.find(params[:host_id]).listings
+      @host = Host.find(params[:host_id])
+      @listings = @host.listings
     else
       @listings = Listing.all
     end

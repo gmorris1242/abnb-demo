@@ -1,7 +1,7 @@
 %section
   .row.mb-2
     .column
-      %h1 Listings
+      %h1= @host ? "#{@host.first_name} Listings" : 'Listings'
 
   %listings(listings="#{@listings.to_json}")
 
