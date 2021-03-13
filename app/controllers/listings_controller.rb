@@ -12,5 +12,6 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
+    @listing.set_calendar
   end
 end
