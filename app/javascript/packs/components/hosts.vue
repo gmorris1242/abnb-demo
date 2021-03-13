@@ -24,7 +24,3 @@ export default {
   props: ['hosts'],
 }
 </script>
-
-<style scoped>
-
-</style>

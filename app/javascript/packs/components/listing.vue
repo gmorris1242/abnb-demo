@@ -18,7 +18,3 @@ export default {
   props: ['listing'],
 }
 </script>
-
-<style scoped>
-
-</style>
