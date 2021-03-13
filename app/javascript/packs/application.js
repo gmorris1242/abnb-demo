@@ -18,10 +18,10 @@ require("channels")
 import TurbolinksAdapter from 'vue-turbolinks'
 import Vue from 'vue/dist/vue.esm'
 import App from '../app.vue'
-import Hosts from 'packs/components/Hosts.vue'
-import Host from 'packs/components/Host.vue'
-import Listings from 'packs/components/Listings.vue'
-import Listing from 'packs/components/Listing.vue'
+import Hosts from 'packs/components/hosts.vue'
+import Host from 'packs/components/host.vue'
+import Listings from 'packs/components/listings.vue'
+import Listing from 'packs/components/listing.vue'
 import CalendarMonth from "packs/components/CalendarMonth.vue";
 
 Vue.use(TurbolinksAdapter)
